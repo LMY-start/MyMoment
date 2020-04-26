@@ -24,9 +24,9 @@
 
     <TextView
         android:id="@+id/momentName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:ellipsize="end"
@@ -34,37 +34,36 @@
         android:text="TextView"
         android:textColor="#14458F"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/momentPhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/describeText"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="85dp"
         android:text="@string/large_text"
+        android:layout_marginTop="5dp"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/momentName"
         app:layout_constraintTop_toBottomOf="@+id/momentName" />
 
     <ImageView
         android:id="@+id/describeImage"
-        android:scaleType="fitXY"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="85dp"
+
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/describeText"
         app:layout_constraintTop_toBottomOf="@+id/describeText"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/mizhikaorou" />
 
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/commentRecycle"-->
 <!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->

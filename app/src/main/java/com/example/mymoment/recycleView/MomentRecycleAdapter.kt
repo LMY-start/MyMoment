@@ -27,6 +27,7 @@ class MomentRecycleAdapter(val datas: List<MomentMessage>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = datas[position]
         holder.itemView.momentName.text = data.sender.username
+        holder.itemView.describeText.text = data.content
         val field = R.mipmap::class.java.getField("touxiang")
         val id = field.getInt(field)
         holder.itemView.momentPhoto.setImageResource(id)
