@@ -8,14 +8,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mymoment.R
 
-class MyRecycleAdapter(val datas: MutableList<ListData.Data>) :
-    RecyclerView.Adapter<MyRecycleAdapter.MyViewHolder>() {
+class MomentRecycleAdapter(val datas: MutableList<ListData.Data>) :
+    RecyclerView.Adapter<MomentRecycleAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.moment_item,null)
+            LayoutInflater.from(parent.context).inflate(R.layout.moment_item, null)
         )
     }
 

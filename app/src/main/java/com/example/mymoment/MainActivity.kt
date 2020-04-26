@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moment.ListData
-import com.example.moment.MyRecycleAdapter
+import com.example.moment.MomentRecycleAdapter
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_scrolling.*
-import kotlinx.android.synthetic.main.moment_item.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         momentRecycle.layoutManager = LinearLayoutManager(this)
-        momentRecycle.adapter = MyRecycleAdapter(datas)
+        momentRecycle.adapter = MomentRecycleAdapter(datas)
         momentRecycle.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 //        commentRecycle
 
