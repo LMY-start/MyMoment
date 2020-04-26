@@ -1,15 +1,18 @@
 package com.example.moment
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.moment.model.MomentMessage
+import com.example.moment.recycleView.CommentRecycleAdapter
 import com.example.mymoment.R
 import kotlinx.android.synthetic.main.moment_item.view.*
 
-class MomentRecycleAdapter(val datas: List<MomentMessage>) :
+class MomentRecycleAdapter(val datas: List<MomentMessage>,private val context: Context) :
     Adapter<MomentRecycleAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -26,6 +29,9 @@ class MomentRecycleAdapter(val datas: List<MomentMessage>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = datas[position]
+        holder.itemView.commentRecycle.layoutManager = LinearLayoutManager(context)
+        holder.itemView.commentRecycle.adapter= CommentRecycleAdapter(data.comments)
+
         holder.itemView.momentName.text = data.sender.username
         holder.itemView.describeText.text = data.content
         val field = R.mipmap::class.java.getField("touxiang")

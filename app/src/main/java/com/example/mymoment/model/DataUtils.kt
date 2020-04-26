@@ -1,4 +1,4 @@
-package com.example.mymoment.model
+package com.example.moment.recycleView
 
 import com.example.moment.model.Comment
 import com.example.moment.model.Image
@@ -34,26 +34,26 @@ class DataUtils {
                             "Super hero",
                             "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
                         )
+                    ),
+                    Comment(
+                        "Good +1",
+                        Sender(
+                            "outman1",
+                            "Super hero",
+                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+                        )
+                    ),
+                    Comment(
+                        "Good +2",
+                        Sender(
+                            "outman2",
+                            "Super hero",
+                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+                        )
                     )
-//                    Comment(
-//                        "Good +1",
-//                        Sender(
-//                            "outman1",
-//                            "Super hero",
-//                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
-//                        )
-//                    ),
-//                    Comment(
-//                        "Good +2",
-//                        Sender(
-//                            "outman2",
-//                            "Super hero",
-//                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
-//                        )
-//                    )
                 )
             ), MomentMessage(
-                "沙发1",
+                "沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1",
                 listOf(
                     Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
                     Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
@@ -66,7 +66,7 @@ class DataUtils {
                 ),
                 listOf(
                     Comment(
-                        "Good1",
+                        "jport2 Good1",
                         Sender(
                             "outman",
                             "Super hero",
@@ -75,7 +75,7 @@ class DataUtils {
                     )
                 )
             ), MomentMessage(
-                "沙发2",
+                "沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2",
                 listOf(
                     Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
                     Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
@@ -88,7 +88,7 @@ class DataUtils {
                 ),
                 listOf(
                     Comment(
-                        "Good2",
+                        "jport2 Good2",
                         Sender(
                             "outman",
                             "Super hero",

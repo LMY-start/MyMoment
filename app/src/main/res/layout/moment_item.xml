@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="0dp"
     android:layout_marginRight="0dp"
+    android:paddingBottom="15dp"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    android:paddingBottom="15dp">
+    app:layout_constraintStart_toStartOf="parent">
 
 
     <ImageView
@@ -41,9 +41,9 @@
         android:id="@+id/describeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="85dp"
-        android:text="@string/large_text"
         android:layout_marginTop="5dp"
+        android:paddingStart="85dp"
+        android:text="strcsdcsdcsdcsdcsdscscscscscscdscscscscscsccing"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/momentName"
         app:layout_constraintTop_toBottomOf="@+id/momentName" />
@@ -63,16 +63,16 @@
         app:srcCompat="@mipmap/mizhikaorou" />
 
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/commentRecycle"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="#FFFFFF"-->
-<!--        app:layout_constraintStart_toStartOf="@id/describeImage"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/describeImage"-->
-<!--        android:focusableInTouchMode="false"-->
-<!--        tools:listitem="@layout/comment_item"-->
-<!--        >-->
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+      android:paddingStart="85dp"
+        android:background="#FFFFFF"
+        android:focusableInTouchMode="false"
+        app:layout_constraintStart_toStartOf="@id/describeImage"
+        app:layout_constraintTop_toBottomOf="@id/describeImage"
+        tools:listitem="@layout/comment_item">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
