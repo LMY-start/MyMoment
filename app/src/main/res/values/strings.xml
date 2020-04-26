@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MyMoment</string>
+    <string name="action_settings">Settings</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+        "物质隐喻是合理空间和运动系统的统一理论。\n\n"
+        "材料是以触觉为基础的，灵感来源于对纸和墨水的研究"
+        "技术先进，对想象力和魔法开放。\n"
+        "光、表面和运动的基本原理是传达物体运动方式的关键"
+        "相互作用，并存在于空间和相互关系中。真实灯光秀"
+        "接缝、分隔空间并指示移动的部分。\n\n"
+    </string>
+</resources>
