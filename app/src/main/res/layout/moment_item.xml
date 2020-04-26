@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/describeImage"
         android:scaleType="fitXY"
         android:layout_width="0dp"
         android:layout_height="250dp"
@@ -67,6 +67,17 @@
         android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/mizhikaorou" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecycle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@id/describeImage"
+        app:layout_constraintTop_toBottomOf="@id/describeImage">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

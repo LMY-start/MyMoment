@@ -1,16 +1,15 @@
 package com.example.mymoment
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moment.ListData
 import com.example.moment.MyRecycleAdapter
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.recycle_moment.*
+import kotlinx.android.synthetic.main.content_scrolling.*
+import kotlinx.android.synthetic.main.moment_item.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,9 +28,12 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        recycleView.layoutManager = LinearLayoutManager(this)
-        recycleView.adapter = MyRecycleAdapter(datas)
-        recycleView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        momentRecycle.layoutManager = LinearLayoutManager(this)
+        momentRecycle.adapter = MyRecycleAdapter(datas)
+        momentRecycle.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+//        commentRecycle
+
+
     }
 
 }
