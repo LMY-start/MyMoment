@@ -1,4 +1,4 @@
-package com.example.moment.recycleView
+package com.example.mymoment.model
 
 import com.example.moment.model.Comment
 import com.example.moment.model.Image
@@ -34,23 +34,23 @@ class DataUtils {
                             "Super hero",
                             "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
                         )
-                    ),
-                    Comment(
-                        "Good +1",
-                        Sender(
-                            "outman1",
-                            "Super hero",
-                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
-                        )
-                    ),
-                    Comment(
-                        "Good +2",
-                        Sender(
-                            "outman2",
-                            "Super hero",
-                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
-                        )
                     )
+//                    Comment(
+//                        "Good +1",
+//                        Sender(
+//                            "outman1",
+//                            "Super hero",
+//                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+//                        )
+//                    ),
+//                    Comment(
+//                        "Good +2",
+//                        Sender(
+//                            "outman2",
+//                            "Super hero",
+//                            "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRJm8UXZ0mYtjv1a48RKkFkdyd4kOWLJB0o_l7GuTS8-q8VF64w"
+//                        )
+//                    )
                 )
             ), MomentMessage(
                 "沙发1",

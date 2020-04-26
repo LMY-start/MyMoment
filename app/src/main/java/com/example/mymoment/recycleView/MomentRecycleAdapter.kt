@@ -3,13 +3,14 @@ package com.example.moment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.moment.model.MomentMessage
 import com.example.mymoment.R
+import kotlinx.android.synthetic.main.moment_item.view.*
 
-class MomentRecycleAdapter(val datas: MutableList<ListData.Data>) :
-    RecyclerView.Adapter<MomentRecycleAdapter.MyViewHolder>() {
+class MomentRecycleAdapter(val datas: List<MomentMessage>) :
+    Adapter<MomentRecycleAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -24,17 +25,15 @@ class MomentRecycleAdapter(val datas: MutableList<ListData.Data>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(datas[position])
+        val data = datas[position]
+        holder.itemView.momentName.text = data.sender.username
+        val field = R.mipmap::class.java.getField("touxiang")
+        val id = field.getInt(field)
+        holder.itemView.momentPhoto.setImageResource(id)
     }
 
+    inner class MyViewHolder(itemView: View) : ViewHolder(itemView)
 
-    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(data: ListData.Data) {
-            itemView.findViewById<TextView>(R.id.nameText).text = data.name
-            val field = R.mipmap::class.java.getField(data.image)
-            val id = field.getInt(field)
-            itemView.findViewById<ImageView>(R.id.imageView).setImageResource(id)
 
-        }
-    }
 }
+

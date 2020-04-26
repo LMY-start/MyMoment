@@ -12,7 +12,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/momentPhoto"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="10dp"
@@ -23,14 +23,12 @@
         app:srcCompat="@mipmap/zuolingyoushe" />
 
     <TextView
-        android:id="@+id/nameText"
+        android:id="@+id/momentName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
         android:ellipsize="end"
         android:lines="1"
         android:text="TextView"
@@ -45,15 +43,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
         android:text="@string/large_text"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/nameText"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+        app:layout_constraintStart_toStartOf="@id/momentName"
+        app:layout_constraintTop_toBottomOf="@+id/momentName" />
 
     <ImageView
         android:id="@+id/describeImage"
@@ -64,20 +60,20 @@
         app:layout_constraintStart_toStartOf="@+id/describeText"
         app:layout_constraintTop_toBottomOf="@+id/describeText"
         android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@mipmap/mizhikaorou" />
 
 
 <!--    <androidx.recyclerview.widget.RecyclerView-->
 <!--        android:id="@+id/commentRecycle"-->
-<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_width="0dp"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:background="#FFFFFF"-->
 <!--        app:layout_constraintStart_toStartOf="@id/describeImage"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/describeImage">-->
-
+<!--        app:layout_constraintTop_toBottomOf="@id/describeImage"-->
+<!--        android:focusableInTouchMode="false"-->
+<!--        tools:listitem="@layout/comment_item"-->
+<!--        >-->
 <!--    </androidx.recyclerview.widget.RecyclerView>-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
