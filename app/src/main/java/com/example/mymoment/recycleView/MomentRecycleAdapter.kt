@@ -12,6 +12,7 @@ import com.example.moment.model.MomentMessage
 import com.example.moment.recycleView.CommentRecycleAdapter
 import com.example.mymoment.R
 import kotlinx.android.synthetic.main.moment_item.view.*
+import java.lang.StringBuilder
 
 class MomentRecycleAdapter(val datas: List<MomentMessage>, private val context: Context) :
     Adapter<MomentRecycleAdapter.MyViewHolder>() {
@@ -34,8 +35,11 @@ class MomentRecycleAdapter(val datas: List<MomentMessage>, private val context: 
 
     inner class MyViewHolder(itemView: View) : ViewHolder(itemView) {
         fun bind(momentMessage: MomentMessage) {
-            itemView.commentRecycle.layoutManager = LinearLayoutManager(context)
-            itemView.commentRecycle.adapter = CommentRecycleAdapter(momentMessage.comments)
+            val stringBuilder = StringBuilder()
+            momentMessage.comments.forEach { comment ->
+                stringBuilder.append("${comment.sender.username}: ${comment.content}").append("\n")
+            }
+            itemView.commentsText.text = stringBuilder.toString()
 
             itemView.momentName.text = momentMessage.sender.username
             itemView.describeText.text = momentMessage.content
