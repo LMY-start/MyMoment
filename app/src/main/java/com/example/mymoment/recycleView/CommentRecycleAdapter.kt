@@ -3,12 +3,12 @@ package com.example.moment.recycleView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moment.model.Comment
 import com.example.mymoment.R
+import kotlinx.android.synthetic.main.comment_item.view.*
 
-class CommentRecycleAdapter(val datas: List<Comment>) :
+class CommentRecycleAdapter(private val datas: List<Comment>) :
     RecyclerView.Adapter<CommentRecycleAdapter.CommentViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
         return CommentViewHolder(
@@ -16,19 +16,17 @@ class CommentRecycleAdapter(val datas: List<Comment>) :
         )
     }
 
-    override fun getItemCount(): Int {
-        return datas.size;
-    }
+    override fun getItemCount() = datas.size;
+
 
     override fun onBindViewHolder(holder: CommentViewHolder, position: Int) {
         holder.bind(datas[position])
     }
 
-
     inner class CommentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(comment: Comment) {
             val content = "${comment.sender.username}：${comment.content}"
-            itemView.findViewById<TextView>(R.id.commentContent).text = content
+            itemView.commentContent.text = content
         }
     }
 }

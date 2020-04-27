@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="0dp"
     android:layout_marginRight="0dp"
     android:paddingBottom="15dp"
@@ -54,7 +54,6 @@
         android:layout_height="250dp"
         android:layout_marginEnd="10dp"
         android:paddingStart="85dp"
-
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -66,10 +65,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/commentRecycle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-      android:paddingStart="85dp"
+        android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:focusableInTouchMode="false"
+        android:paddingStart="85dp"
         app:layout_constraintStart_toStartOf="@id/describeImage"
         app:layout_constraintTop_toBottomOf="@id/describeImage"
         tools:listitem="@layout/comment_item">

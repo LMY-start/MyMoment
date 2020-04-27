@@ -7,19 +7,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.moment.model.Comment
 import com.example.moment.model.MomentMessage
 import com.example.moment.recycleView.CommentRecycleAdapter
 import com.example.mymoment.R
 import kotlinx.android.synthetic.main.moment_item.view.*
 
-class MomentRecycleAdapter(val datas: List<MomentMessage>,private val context: Context) :
+class MomentRecycleAdapter(val datas: List<MomentMessage>, private val context: Context) :
     Adapter<MomentRecycleAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.moment_item, null)
+            LayoutInflater.from(parent.context).inflate(R.layout.moment_item, null, false)
         )
     }
 
@@ -28,18 +29,21 @@ class MomentRecycleAdapter(val datas: List<MomentMessage>,private val context: C
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = datas[position]
-        holder.itemView.commentRecycle.layoutManager = LinearLayoutManager(context)
-        holder.itemView.commentRecycle.adapter= CommentRecycleAdapter(data.comments)
-
-        holder.itemView.momentName.text = data.sender.username
-        holder.itemView.describeText.text = data.content
-        val field = R.mipmap::class.java.getField("touxiang")
-        val id = field.getInt(field)
-        holder.itemView.momentPhoto.setImageResource(id)
+        holder.bind(datas[position])
     }
 
-    inner class MyViewHolder(itemView: View) : ViewHolder(itemView)
+    inner class MyViewHolder(itemView: View) : ViewHolder(itemView) {
+        fun bind(momentMessage: MomentMessage) {
+            itemView.commentRecycle.layoutManager = LinearLayoutManager(context)
+            itemView.commentRecycle.adapter = CommentRecycleAdapter(momentMessage.comments)
+
+            itemView.momentName.text = momentMessage.sender.username
+            itemView.describeText.text = momentMessage.content
+            val field = R.mipmap::class.java.getField("touxiang")
+            val id = field.getInt(field)
+            itemView.momentPhoto.setImageResource(id)
+        }
+    }
 
 
 }
