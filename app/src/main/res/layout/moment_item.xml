@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:paddingStart="85dp"
-        android:text="strcsdcsdcsdcsdcsdscscscscscscdscscscscscsccing"
+        android:text="这是第几条盆友圈呢"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@id/momentName"
         app:layout_constraintTop_toBottomOf="@+id/momentName" />
@@ -53,12 +53,11 @@
         android:layout_height="250dp"
         android:layout_marginEnd="10dp"
         android:paddingStart="85dp"
-        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/describeText"
         app:layout_constraintTop_toBottomOf="@+id/describeText"
-        app:srcCompat="@mipmap/mizhikaorou" />
+        app:srcCompat="@mipmap/describe_image" />
 
     <TextView
         android:id="@+id/commentsText"
