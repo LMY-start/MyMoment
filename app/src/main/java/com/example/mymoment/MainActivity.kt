@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(), IUserContract.IView, IMomentContract.I
 
     private val userPresenter = UserPresenter(RepositoryForNetWork())
     private val momentPresenter = MomentPresenter(RepositoryForNetWork())
-    private val momentRecycleAdapter = MomentRecycleAdapter(this)
+    private val momentRecycleAdapter = MomentRecycleAdapter()
 
     override fun onDestroy() {
         super.onDestroy()

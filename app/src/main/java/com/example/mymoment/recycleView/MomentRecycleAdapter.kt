@@ -1,11 +1,8 @@
 package com.example.moment
 
-import android.content.Context
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
@@ -14,7 +11,7 @@ import com.example.mymoment.R
 import kotlinx.android.synthetic.main.moment_item.view.*
 import java.lang.StringBuilder
 
-class MomentRecycleAdapter(private val context: Context) :
+class MomentRecycleAdapter :
     Adapter<MomentRecycleAdapter.MyViewHolder>() {
 
     private var datas: List<MomentMessage> = listOf()
@@ -48,9 +45,9 @@ class MomentRecycleAdapter(private val context: Context) :
             itemView.momentName.text = momentMessage.sender?.username
             itemView.describeText.text = momentMessage.content
             itemView.describeText.width =itemView.describeText.maxWidth
-            Glide.with(context).load(momentMessage.sender?.avatar).placeholder(R.mipmap.touxiang)
+            Glide.with(itemView.context).load(momentMessage.sender?.avatar).placeholder(R.mipmap.touxiang)
                 .into(itemView.momentPhoto)
-            Glide.with(context).load(momentMessage.images?.get(0)?.url).placeholder(R.mipmap.describe_image)
+            Glide.with(itemView.context).load(momentMessage.images?.get(0)?.url).placeholder(R.mipmap.describe_image)
                 .into(itemView.describeImage)
         }
     }
