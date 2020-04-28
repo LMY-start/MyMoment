@@ -4,18 +4,19 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.moment.model.Comment
-import com.example.moment.model.MomentMessage
-import com.example.moment.recycleView.CommentRecycleAdapter
+import com.bumptech.glide.Glide
+import com.example.mymoment.model.MomentMessage
 import com.example.mymoment.R
 import kotlinx.android.synthetic.main.moment_item.view.*
 import java.lang.StringBuilder
 
-class MomentRecycleAdapter(val datas: List<MomentMessage>, private val context: Context) :
+class MomentRecycleAdapter(private val context: Context) :
     Adapter<MomentRecycleAdapter.MyViewHolder>() {
+
+    private var datas: List<MomentMessage> = listOf()
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -36,19 +37,29 @@ class MomentRecycleAdapter(val datas: List<MomentMessage>, private val context: 
     inner class MyViewHolder(itemView: View) : ViewHolder(itemView) {
         fun bind(momentMessage: MomentMessage) {
             val stringBuilder = StringBuilder()
-            momentMessage.comments.forEach { comment ->
-                stringBuilder.append("${comment.sender.username}: ${comment.content}").append("\n")
+            momentMessage.comments?.forEach { comment ->
+                stringBuilder.append("${comment.sender.username}: ${comment.content}")
+                    .append("\n")
             }
             itemView.commentsText.text = stringBuilder.toString()
 
-            itemView.momentName.text = momentMessage.sender.username
+            itemView.momentName.text = momentMessage.sender?.username
             itemView.describeText.text = momentMessage.content
-            val field = R.mipmap::class.java.getField("touxiang")
-            val id = field.getInt(field)
-            itemView.momentPhoto.setImageResource(id)
+
+            Glide.with(context).load(momentMessage.sender?.avatar)
+                .into(itemView.momentPhoto)
+            Glide.with(context).load(momentMessage.images?.get(0)?.url)
+                .into(itemView.describeImage)
         }
     }
 
+    fun refresh(momentMessages: List<MomentMessage>) {
+        mutableListOf<MomentMessage>()
+        this.datas = momentMessages.filter {
+            it.content != null && it.sender != null
+        }.toList()
+        notifyDataSetChanged()
+    }
 
 }
 

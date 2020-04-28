@@ -1,9 +1,9 @@
 package com.example.moment.recycleView
 
-import com.example.moment.model.Comment
-import com.example.moment.model.Image
-import com.example.moment.model.MomentMessage
-import com.example.moment.model.Sender
+import com.example.mymoment.model.Comment
+import com.example.mymoment.model.MyImage
+import com.example.mymoment.model.MomentMessage
+import com.example.mymoment.model.Sender
 
 class DataUtils {
 
@@ -17,9 +17,9 @@ class DataUtils {
             MomentMessage(
                 words,
                 listOf(
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
-                    Image("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
+                    MyImage("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
                 ),
                 Sender(
                     "jport1",
@@ -55,9 +55,9 @@ class DataUtils {
             ), MomentMessage(
                 "沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1沙发1",
                 listOf(
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
-                    Image("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
+                    MyImage("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
                 ),
                 Sender(
                     "jport2",
@@ -77,9 +77,9 @@ class DataUtils {
             ), MomentMessage(
                 "沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2沙发2",
                 listOf(
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
-                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
-                    Image("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
+                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
+                    MyImage("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
                 ),
                 Sender(
                     "jport3",
@@ -99,9 +99,9 @@ class DataUtils {
 //            ), MomentMessage(
 //                "沙发",
 //                listOf(
-//                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
-//                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
-//                    Image("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
+//                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
+//                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
+//                    MyImage("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
 //                ),
 //                Sender(
 //                    "jport",
@@ -137,9 +137,9 @@ class DataUtils {
 //            ), MomentMessage(
 //                "沙发",
 //                listOf(
-//                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
-//                    Image("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
-//                    Image("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
+//                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDy7HZaHxn15wWj6pXE4uMKAqHTC_uBgBlIzeeQSj2QaGgUzUmHg"),
+//                    MyImage("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlJRALAf-76JPOLohBKzBg8Ab4Q5pWeQhF5igSfBflE_UYbqu7"),
+//                    MyImage("http://i.ytimg.com/vi/rGWI7mjmnNk/hqdefault.jpg")
 //                ),
 //                Sender(
 //                    "jport",
@@ -158,11 +158,5 @@ class DataUtils {
 //                )
             )
         )
-    }
-
-    fun createCommentData(): List<Comment> {
-        return createMomentMessagesData().map { data ->
-            return data.comments
-        }.toList()
     }
 }

@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.moment.model.Comment
 import com.example.mymoment.R
+import com.example.mymoment.model.Comment
 import kotlinx.android.synthetic.main.comment_item.view.*
 
 class CommentRecycleAdapter(private val datas: List<Comment>) :

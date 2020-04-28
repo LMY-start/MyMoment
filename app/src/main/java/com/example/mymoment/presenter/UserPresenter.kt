@@ -1,29 +1,28 @@
 package com.example.mymoment.presenter
 
-import com.example.mymoment.respository.UserRepository
+import com.example.mymoment.respository.RepositoryForNetWork
 
-class UserPresenter(private val userRepository: UserRepository): IUserContract.IPresenter {
+class UserPresenter(private val repositoryForNetWork: RepositoryForNetWork) : IUserContract.IPresenter {
 
     private var view: IUserContract.IView? = null
 
     fun attach(view: IUserContract.IView) {
-       this.view = view
+        this.view = view
+        getUserInfo()
     }
 
     fun detach() {
         this.view = null
+        // stop network
     }
 
     override fun getUserInfo() {
-        userRepository.getUserInfo({user ->
-            view?.let {
-                it.updateUserInfoView(user)
-            }
+        repositoryForNetWork.getUserInfo({ user ->
+            view?.updateUserInfoView(user)
         }, {
 
-            view?.let {
-                it.displayErrorView()
-            }
+            view?.displayErrorView()
         });
     }
+
 }

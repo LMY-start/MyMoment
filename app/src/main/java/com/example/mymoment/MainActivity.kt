@@ -7,33 +7,37 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.moment.MomentRecycleAdapter
-import com.example.moment.recycleView.DataUtils
+import com.example.mymoment.model.MomentMessage
 import com.example.mymoment.model.User
+import com.example.mymoment.presenter.IMomentContract
 import com.example.mymoment.presenter.IUserContract
+import com.example.mymoment.presenter.MomentPresenter
 import com.example.mymoment.presenter.UserPresenter
-import com.example.mymoment.respository.UserRepository
+import com.example.mymoment.respository.RepositoryForNetWork
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_scrolling.*
 
-class MainActivity : AppCompatActivity(), IUserContract.IView {
+class MainActivity : AppCompatActivity(), IUserContract.IView, IMomentContract.IView {
 
-    private val presenter = UserPresenter(UserRepository())
-    private val datas = DataUtils().createMomentMessagesData()
+    private val userPresenter = UserPresenter(RepositoryForNetWork())
+    private val momentPresenter = MomentPresenter(RepositoryForNetWork())
+    private val momentRecycleAdapter = MomentRecycleAdapter(this)
 
     override fun onDestroy() {
         super.onDestroy()
-        presenter.detach()
+        userPresenter.detach()
+        momentPresenter.detach()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        presenter.attach(this)
-        presenter.getUserInfo()
+        userPresenter.attach(this)
+        momentPresenter.attach(this)
 
         momentRecycle.layoutManager = LinearLayoutManager(this)
-        momentRecycle.adapter = MomentRecycleAdapter(datas, this)
+        momentRecycle.adapter = momentRecycleAdapter
         momentRecycle.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
         myPhoto.setOnClickListener { view ->
@@ -50,13 +54,23 @@ class MainActivity : AppCompatActivity(), IUserContract.IView {
     override fun updateUserInfoView(user: User) {
         runOnUiThread {
             with(user) {
-                Glide.with(this@MainActivity).load(avatar).error(R.mipmap.view_bg)
+                Glide.with(this@MainActivity).load(profileImage).placeholder(R.mipmap.view_bg)
+                    .into(background)
+                Glide.with(this@MainActivity).load(avatar).placeholder(R.mipmap.touxiang)
                     .into(myPhoto)
-                Glide.with(this@MainActivity).load(profileImage).into(background)
                 myName.text = nick
             }
         }
     }
+
+
+    override fun updateMomentMessageView(momentMessages: List<MomentMessage>) {
+        runOnUiThread {
+            println("updateMomentMessageView ===============${momentMessages}")
+            momentRecycleAdapter.refresh(momentMessages)
+        }
+    }
+
 
     override fun displayErrorView() {
         runOnUiThread {

@@ -1,10 +1,25 @@
-package com.example.moment.model
-
-import java.io.Serializable
+package com.example.mymoment.model
 
 data class MomentMessage(
+    val content: String?,
+    val images: List<MyImage>?,
+    val sender: Sender?,
+    val comments: List<Comment>?
+)
+
+
+data class Comment(
     val content: String,
-    val images: List<Image>,
-    val sender: Sender,
-    val comments: List<Comment>
-) : Serializable
+    val sender: Sender
+)
+
+data class MyImage(
+    val url: String
+)
+
+
+data class Sender(
+    val username: String,
+    val nick: String,
+    val avatar: String
+)
